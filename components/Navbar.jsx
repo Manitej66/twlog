@@ -16,7 +16,7 @@ const Navbar = () => {
 
           <a
             className="my-1 text-sm font-medium text-gray-700 hover:text-indigo-500 lg:mx-4 lg:my-0"
-            href="#"
+            href="https://github.com/Manitej66/twlog"
           >
             <img src="/git.svg" width="30" alt="" />
           </a>

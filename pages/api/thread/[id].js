@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       .slice(0, 6)
       .forEach((s) => (blog_text += `{% twitter ${s.id_str} %}\n`));
 
-    blog_text += `\n this article is generated using ${process.env.NEXT_PUBLIC_URL}`;
+    blog_text += `\n > this article is generated using https://github.com/Manitej66/twlog `;
 
     res.status(200).json({
       title: text.slice(0, 80).replace(/\n/g, " "),
