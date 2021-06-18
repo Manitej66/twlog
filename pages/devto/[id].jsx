@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Layout from "../../components/Layout";
 import Image from "next/image";
 import { useState } from "react";
@@ -145,7 +146,7 @@ const Thread = ({ data, error }) => {
         <div className="px-4 py-2">
           <p className="p-2">
             DEV.TO api key{" "}
-            <span className="text-red-400">(we won't store in anywhere)</span>{" "}
+            <span className="text-red-400">(we won"t store in anywhere)</span>{" "}
             <a href="https://dev.to/settings/account" className="underline">
               (get key from here)
             </a>
