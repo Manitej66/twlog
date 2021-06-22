@@ -12,7 +12,11 @@ export default async function handler(req, res) {
   );
 
   // replace whitespace with %20
-  const imgUrl = `https://og-image.vercel.app/${t.split(" ").join("%20")}.png`;
+  // const imgUrl = `https://og-image.vercel.app/${t.split(" ").join("%20")}.png`;
+
+  const imgUrl = `https://og-image.vercel.app/${t
+    .split(" ")
+    .join("%20")}.png?fontSize=75px`;
 
   try {
     const response = await fetch("https://dev.to/api/articles", {
@@ -34,6 +38,7 @@ export default async function handler(req, res) {
     const data = await response.json();
     res.status(200).json(data);
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       message: error.message,
     });

@@ -25,13 +25,13 @@ const Header = () => {
 
               <div className="flex flex-col mt-8 space-y-5">
                 <input
-                  type="number"
-                  maxLength={20}
                   onChange={(e) => setUrl(e.target.value.trim())}
                   className="px-4 py-3 text-gray-700 w-full bg-white border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none focus:ring"
                   placeholder="Twitter Thread ID"
                 />
-                <Link href={`/devto/${url}`}>
+                <Link
+                  href={`/devto/${url.split("status/").pop().split("?")[0]}`}
+                >
                   <a className="px-4 flex items-center gap-2 text-gray-700 py-3 text-sm tracking-wide font-semibold transition-colors duration-200 transform bg-gray-200 rounded-lg hover:bg-gray-300 focus:outline-none">
                     <img
                       src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"

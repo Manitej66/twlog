@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Layout from "../../components/Layout";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import axios from "axios";
 
@@ -12,8 +12,15 @@ const Thread = ({ data, error }) => {
   const [published_url, setPublished_url] = useState("");
   const [message, setMessage] = useState("");
 
+  useEffect(() => {
+    if (localStorage.getItem("key")) {
+      setKey(localStorage.getItem("key"));
+    }
+  }, []);
+
   const publish = () => {
     if (key.length > 10) {
+      localStorage.setItem("key", key);
       setLoading(true);
       const options = {
         method: "POST",
